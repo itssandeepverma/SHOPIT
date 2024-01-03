@@ -1,0 +1,22 @@
+{
+  "name": "shopit",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node backend/app.js",
+    "dev": "set NODE_ENV=DEVELOPMENT && nodemon backend/app.js",
+    "prod": "set NODE_ENV=PRODUCTION && nodemon backend/app.js"
+  },
+  "author": "Sandeep Kumar",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "mongoose": "^8.0.3"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2"
+  }
+}
