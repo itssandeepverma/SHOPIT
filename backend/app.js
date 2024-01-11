@@ -2,19 +2,39 @@
 import express from "express";
 const app = express();
 import dotenv from "dotenv";
+import cookieParser from "cookie-parser";
 import { connectDatabase } from "./config/dbConnect.js";
+import errorMiddleware from "./middlewares/errors.js";
+
+
+// Handle Uncaught exceptions
+process.on("uncaughtException", (err) => {
+  console.log(`ERROR: ${err}`);
+  console.log("Shutting down due to uncaught expection");
+  process.exit(1);
+});
+
 
 dotenv.config({ path: "backend/config/config.env" });
 
 // // Connecting to database
 connectDatabase();
 
+
 app.use(express.json())   // to handle the json
+app.use(cookieParser());
 
 // Import all routes
 import productRoutes from "./routes/products.js";
+import authRoutes from "./routes/auth.js";
 
 app.use("/api/v1", productRoutes);
+app.use("/api/v1", authRoutes);
+
+
+
+//using error middlewear  // added in section 3.
+app.use(errorMiddleware);
 
 
 
@@ -24,4 +44,15 @@ app.listen(process.env.PORT, () => {
   );
 });
 
-console.log("Hello Sandeep")
+//Handle Unhandled Promise rejections
+process.on("unhandledRejection", (err) => {
+  console.log(`ERROR: ${err}`);
+  console.log("Shutting down server due to Unhandled Promise Rejection");
+  server.close(() => {
+    process.exit(1);
+  });
+});
+
+console.log("Hello Sandeep")  
+
+

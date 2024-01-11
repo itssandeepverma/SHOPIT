@@ -3,7 +3,7 @@ import products from "./data.js";
 import Product from "../models/product.js";
 
 const seedProducts = async () => {
-  try {
+  try {  
     await mongoose.connect("mongodb://localhost:27017/SHOPIT");
 
     await Product.deleteMany();
