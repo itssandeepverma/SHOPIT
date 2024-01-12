@@ -6,6 +6,8 @@ export default (err, req, res, next) => {
     message: err?.message || "Internal Server Error",
   };
 
+  //  console.log("sad");
+
   // Handle Invalid Mongoose ID Error
   if (err.name === "CastError") {
     const message = `Resource not found. Invalid: ${err?.path}`;
@@ -26,7 +28,7 @@ export default (err, req, res, next) => {
 
   // Handle wrong JWT Error
   if (err.name === "JsonWebTokenError") {
-    const message = `JSON Web Token is invalid. Try Again!!!`; 
+    const message = `JSON Web Token is invalid. Try Again!!!`;
     error = new ErrorHandler(message, 400);
   }
 
@@ -36,7 +38,14 @@ export default (err, req, res, next) => {
     error = new ErrorHandler(message, 400);
   }
 
-  if (process.env.NODE_ENV === "DEVELOPMENT") {
+
+  // console.log(process.env.NODE_ENV.trim()==='DEVELOPMENT');
+  // console.log(process.env.NODE_ENV); 
+
+  //trim was missiing so not able to enter into the if condition.
+
+  if (process.env.NODE_ENV.trim() == "DEVELOPMENT") {
+    console.log("fsa");
     res.status(error.statusCode).json({
       message: error.message,
       error: err,
@@ -44,9 +53,11 @@ export default (err, req, res, next) => {
     });
   }
 
-  if (process.env.NODE_ENV === "PRODUCTION") {
+  if (process.env.NODE_ENV.trim() == "PRODUCTION") {
+    console.log("saad");
     res.status(error.statusCode).json({
       message: error.message,
     });
   }
+
 };
