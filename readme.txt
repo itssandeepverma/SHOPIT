@@ -177,3 +177,39 @@ Get Order Details :
     "user",
     "name email"
   );   // would show only the these entry of the user as they only needed in the frontend. 
+
+  myorders - to show the current user all orders
+  When user create a order, it orderStatis is processing, 
+  UpdateOrder endpoints pricess the order and make it shipped by reducing the stock from products database.
+
+  Note : to add the same products id of a respective product while creating order int orderItems in order. 
+
+  DeleteOrder - to delete the order using its order id.
+
+  So, basically three tables - Order, User, Products with id given in all. Keep track of the proper referencing. 
+
+
+  --------------------------------------------------Section- 8-----------------------------------
+
+  USER REVIEW Added
+
+  In prductController, three endpoints are added 
+  IN product model, schema have array of review and reviewcount
+  
+  Add Review : 
+  Check if user have already reviews ? if already reviewed then update the table, else create new review and update the reviewcount and average rating
+
+  const ratings =
+    numOfReviews === 0
+      ? 0
+      : product.reviews.reduce((acc, item) => item.rating + acc, 0) /
+        numOfReviews;
+
+  Can read about the map, reduce and filter function. 
+
+  Get all Review : to get all review of a prodcut using its product id.
+
+  Delete review : admin only, with deleting using product id and review id. 
+
+  DONE...........................
+
