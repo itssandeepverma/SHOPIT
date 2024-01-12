@@ -2,6 +2,7 @@
 export default (user, statusCode, res) => {
   // Create JWT Token
   const token = user.getJwtToken();
+  console.log(token);
 
   // Options for cookie
   const options = {
