@@ -7,7 +7,7 @@ import jwt from "jsonwebtoken";
 export const isAuthenticatedUser = catchAsyncErrors(async (req, res, next) => {
   
   const { token } = req.cookies;
-  console.log(token);
+  // console.log(token);
 
   if (!token) {
     return next(new ErrorHandler("Login first to access this resource", 401));
@@ -22,7 +22,7 @@ export const isAuthenticatedUser = catchAsyncErrors(async (req, res, next) => {
 // Authorize user roles
 export const authorizeRoles = (...roles) => {  
 
-  console.log(roles);
+  // console.log(roles);
   return (req, res, next) => {
     if (!roles.includes(req.user.role)) {
       return next(

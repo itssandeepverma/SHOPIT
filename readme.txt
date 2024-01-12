@@ -142,3 +142,38 @@ Added the html,css template in the emailTemplates to show the respective files.
 
 
 Now added forget password, reset password logic in controllers/authControllers.
+When forgot password, a link is sent to mail valid for 30 minutes handled in cookies.
+reset token, reset token expiry time is added in database. 
+
+Now remember hitting that link with http not https as in mail its https so change it.
+Also mail is not send when connected using ethernet so change it with mobile network.
+
+Also different error is handled in middlewear/error.js
+
+
+--------------------------------------------Section 6------------------------------------------
+
+HANDLED USER Routes
+
+const user = await User.findById(req?.user?._id).select("+password");    // password id made false in the user model to show up in json, so 
+                                                                                    //doing it by select function
+
+Added endpoints for update User, Get All user by admin, get specific user, delete user, update profile in authControllers.js
+
+
+---------------------------------Section 7-----------------------------------
+
+ORDER MODEL 
+
+Steps : Create Model -> Create endpoints by routing them from routes which is being called from app.js. 
+
+Endpoints : 
+
+Create newOrder :  Only work with COD now. 
+
+Get Order Details : 
+
+ const order = await Order.findById(req.params.id).populate(
+    "user",
+    "name email"
+  );   // would show only the these entry of the user as they only needed in the frontend. 
