@@ -46,8 +46,12 @@ userSchema.pre("save", async function (next) {
 
 // Return JWT Token
 userSchema.methods.getJwtToken = function () {
-  return jwt.sign({ id: this._id }, process.env.JWT_SECRET, {  
-    expiresIn: process.env.JWT_EXPIRES_TIME,
+  console.log(this._id);
+  console.log(process.env.JWT_SECRET);
+
+  return jwt.sign({ id: this._id }, process.env.JWT_SECRET, 
+    
+    {  expiresIn: process.env.JWT_EXPIRES_TIME,
   });
 };
 
@@ -62,6 +66,7 @@ userSchema.methods.getResetPasswordToken = function () {
   const resetToken = crypto.randomBytes(20).toString("hex");
 
   // Hash and set to resetPasswordToken field
+
   this.resetPasswordToken = crypto
     .createHash("sha256")
     .update(resetToken)

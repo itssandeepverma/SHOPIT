@@ -9,7 +9,6 @@ import crypto from "crypto";
 // Register user   =>  /api/v1/register
 export const registerUser = catchAsyncErrors(async (req, res, next) => {
   const { name, email, password } = req.body;
-  console.log("asfa");
 
   const user = await User.create({
     name,
@@ -18,6 +17,7 @@ export const registerUser = catchAsyncErrors(async (req, res, next) => {
   });
 
   sendToken(user, 201, res);
+
 });
 
 // Login user   =>  /api/v1/login
@@ -78,12 +78,13 @@ export const forgotPassword = catchAsyncErrors(async (req, res, next) => {
 
   // Create reset password url
   const resetUrl = `${process.env.FRONTEND_URL}/api/v1/password/reset/${resetToken}`;
+  console.log(resetToken);
   console.log(resetUrl)
 
   const message = getResetPasswordTemplate(user?.name, resetUrl);
 
   try {
-    console.log("inside");
+
     await sendEmail({
       email: user.email,
       subject: "ShopIT Password Recovery",
@@ -94,12 +95,15 @@ export const forgotPassword = catchAsyncErrors(async (req, res, next) => {
       message: `Email sent to: ${user.email}`,
     });
 
-  } catch (error) {
+  } 
+  
+  catch (error) {
+
     user.resetPasswordToken = undefined;
     user.resetPasswordExpire = undefined;
 
     await user.save();
-    console.log("sandeep")
+    console.log("sandevnbcvep")
     return next(new ErrorHandler(error?.message, 500)); 
 
   }
@@ -108,6 +112,10 @@ export const forgotPassword = catchAsyncErrors(async (req, res, next) => {
 // Reset password   =>  /api/v1/password/reset/:token
 export const resetPassword = catchAsyncErrors(async (req, res, next) => {
   // Hash the URL Token
+
+    console.log("ndz");
+
+
   const resetPasswordToken = crypto
     .createHash("sha256")
     .update(req.params.token)
@@ -117,6 +125,8 @@ export const resetPassword = catchAsyncErrors(async (req, res, next) => {
     resetPasswordToken,
     resetPasswordExpire: { $gt: Date.now() },
   });
+
+
 
   if (!user) {
     return next(
@@ -140,4 +150,5 @@ export const resetPassword = catchAsyncErrors(async (req, res, next) => {
   await user.save();
 
   sendToken(user, 200, res);
+
 });

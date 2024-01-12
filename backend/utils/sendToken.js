@@ -1,7 +1,9 @@
 // Create token and save in the cookie
 export default (user, statusCode, res) => {
   // Create JWT Token
+  console.log("before getting token");
   const token = user.getJwtToken();
+  console.log("After getting token");
 
   // Options for cookie
   const options = {
