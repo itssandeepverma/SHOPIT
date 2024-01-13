@@ -211,5 +211,26 @@ Get Order Details :
 
   Delete review : admin only, with deleting using product id and review id. 
 
+
+
+----------------------------------------------------------frontend--------------------
+
+All commands : 
+-npx create-react-app .
+-npm start
+
+
+  Frontend : 
+  In frontend folder, hit npx create-react-app . to iniitalise the frontend app with . means name same as the folder, we can give any name there.
+  Use npm start to start the project.
+
+  In public - index.html  is the html file, we added some bootstraping files and font scirpt link.
+  in src - keep only app.css, app.js, index.js 
+
+  index.js main file, call the functions in app.js having html codes. 
+
   DONE...........................
+
+
+
 
