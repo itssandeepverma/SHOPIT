@@ -108,7 +108,7 @@ in app.js - add cookie parser t
 o use 
 in routes/product.js -
 in routes of products, before calling getproducts, call the middlewear function, for authentication that will check cookie is there or not.
-This will help unauthenticated user to hit the api and get the products. 
+This will help avoid  unauthenticated user to hit the api and get the products. 
 Also read about the middlewear stack. 
 
 Role added, so that admin things are only accessible through admin roles. 
@@ -218,16 +218,58 @@ Get Order Details :
 All commands : 
 -npx create-react-app .
 -npm start
+-npm install react-router-dom       // for routing file in App.js
+-npm install react-helmet           // for MetaData.jsx 
 
 
   Frontend : 
   In frontend folder, hit npx create-react-app . to iniitalise the frontend app with . means name same as the folder, we can give any name there.
   Use npm start to start the project.
 
-  In public - index.html  is the html file, we added some bootstraping files and font scirpt link.
+  In public - index.html  is the html file, we added some bootstraping files and font script link.
   in src - keep only app.css, app.js, index.js 
 
   index.js main file, call the functions in app.js having html codes. 
+
+  Added - Footer.jsx , header.jsx, Home.jsx which are all imported in app.js and called. 
+
+- npm install react-router-dom       // for routing file in App.js
+-npm install react-helmet           // for MetaData.jsx 
+
+
+-------
+
+Redux Tookit - Powerful tool to manange the state - global place to save our application data and to get data from state from any component.
+npm install @reduxjs/toolkit react-redux --save
+Install redux devtools extension in chrome which would help for better inspection. 
+
+Read about RTK query. Used for fetching data mostly. 
+It handles many things, and no need to write code explicitly for many stuffs.
+const { data, isLoading, error, isError } = useGetProductsQuery();
+
+
+react-hot-toast : toast messages . 
+
+api/productapi.js : have endpoints and logic means the UI/HTML is in  src/components/product,
+
+- Added Product item - to show product at glance.
+- Added ProductDetails - to show the details, use link instead of href to not to reload the entire page 
+- cache behaviour - stored in the cache for the 0 sec the data fetched for example, the data fetched of all products. 
+
+app.js - /home.js - productitem - productDetails 
+
+------
+
+Section 14 : 
+
+SEARCH, PAGINATION, FILTER 
+
+npm install react-js-pagination 
+CustomPagination.jsx - added the logic for pagination.
+And add it to Home.jsx
+Got the value from the page, set the current page number,and then set the pagination component( set active page, resperpage etc..)
+
+
 
   DONE...........................
 
