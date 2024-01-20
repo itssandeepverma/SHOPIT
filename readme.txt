@@ -269,7 +269,22 @@ CustomPagination.jsx - added the logic for pagination.
 And add it to Home.jsx
 Got the value from the page, set the current page number,and then set the pagination component( set active page, resperpage etc..)
 
+Added filter.jsx  , search.jsx : they all are working with product with params get request ( we did in the backend already api)
 
+Navigate - object in route-dom : used to navigate to other url
+Also added component and helper folder in componenet
+And made changes to Home.jsx to show the filter page as well. 
+
+-------------------------------Section 15------------------------
+
+AUTHENTICATION FRONTEND 
+
+Login User, Register User added
+
+added in componenets/auth  - login.jsx, register.jsx
+Made changes in Store.js (middlewear authentication) and App.js(added routes) Home(login link)
+
+Added redux/api/authApi.js and userApi.js
 
   DONE...........................
 
