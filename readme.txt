@@ -286,6 +286,31 @@ Made changes in Store.js (middlewear authentication) and App.js(added routes) Ho
 
 Added redux/api/authApi.js and userApi.js
 
+Added up th logic in header file to change when login and logout the name else login
+
+
+-----------------------------Section 16--------------------------------
+
+Handle User & Protected Routes
+
+
+Added layout/UserLayout
+
+Side Bar having the options 
+
+Added in component user folder for the profile related things.
+Add also in the App.js the routes
+
+A React component is a JavaScript class or function that returns a piece of UI.
+Components define the structure, behavior, and appearance of parts of a user interface.
+
+protectedRoutes in auth help to authenticate just like in backend we do. 
+Its also added in the app.js 
+means if not login , the profile section routes are navigated to the login page.
+
+Set up cloudinary and fill the details in config file.
+Issue in uploading big files - express.use(json{limit : 1 mb}) in app.js in backend
+
   DONE...........................
 
 

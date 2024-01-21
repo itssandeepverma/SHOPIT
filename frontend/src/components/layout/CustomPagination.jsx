@@ -7,7 +7,7 @@ const CustomPagination = ({ resPerPage, filteredProductsCount }) => {
   const [currentPage, setCurrentPage] = useState();
 
   let [searchParams] = useSearchParams();   //get the value from the param
-  const navigate = useNavigate();
+  const navigate = useNavigate();           // navigate hook to navigate the usr
 
   const page = Number(searchParams.get("page")) || 1;
 

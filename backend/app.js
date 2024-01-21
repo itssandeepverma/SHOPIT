@@ -21,7 +21,7 @@ dotenv.config({ path: "backend/config/config.env" });
 connectDatabase();
 
 
-app.use(express.json())   // to handle the json
+app.use(express.json({limit : '10mb'}))   // to handle the uplad file upto 10mb
 app.use(cookieParser());
 
 // Import all routes
