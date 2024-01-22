@@ -309,7 +309,22 @@ Its also added in the app.js
 means if not login , the profile section routes are navigated to the login page.
 
 Set up cloudinary and fill the details in config file.
-Issue in uploading big files - express.use(json{limit : 1 mb}) in app.js in backend
+Issue in uploading big files - express.use(json{limit : 1 mb}) in app.js in backend. 
+
+In App.js , the routes are there, then in redux/apis/userApi/ the connection to backend is there and in layout the logic is there after 
+getting up the data. 
+
+----------------------------Section 17---------------------------------------------------------------
+
+HANDLING USER CART 
+
+- increase, decrease count logic in componenet/product/productDetails
+- addtoCart logic also
+
+cart componenet is added for showing up the cart page and summary with add,decrease,delete button.
+Meta Data added in every page ofr title.
+
+ 
 
   DONE...........................
 

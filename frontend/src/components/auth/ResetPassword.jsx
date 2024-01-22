@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useResetPasswordMutation } from "../../redux/api/userApi";
 import { useSelector } from "react-redux";
 import toast from "react-hot-toast";
+import MetaData from "../layout/MetaData";
 import { useNavigate, useParams } from "react-router-dom";
 
 const ResetPassword = () => {
@@ -43,6 +44,9 @@ const ResetPassword = () => {
   };
 
   return (
+    
+     <>
+      <MetaData title={"Reset Password"} />
     <div className="row wrapper">
       <div className="col-10 col-lg-5">
         <form className="shadow rounded bg-body" onSubmit={submitHandler}>
@@ -87,6 +91,7 @@ const ResetPassword = () => {
         </form>
       </div>
     </div>
+    </>
   );
 };
 
