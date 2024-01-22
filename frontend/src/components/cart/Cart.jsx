@@ -1,11 +1,12 @@
 import React from "react";
 import MetaData from "../layout/MetaData";
 import { useDispatch, useSelector } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { setCartItem, removeCartItem } from "../../redux/features/cartSlice";
 
 const Cart = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const { cartItems } = useSelector((state) => state.cart);
 
@@ -42,6 +43,10 @@ const Cart = () => {
     dispatch(removeCartItem(id));
   };
 
+  const checkoutHandler = () => {
+    navigate("/shipping");
+  };
+
   return (
     <>
       <MetaData title={"Your Cart"} />
@@ -55,7 +60,7 @@ const Cart = () => {
 
           <div className="row d-flex justify-content-between">
             <div className="col-12 col-lg-8">
-              {cartItems?.map((item) => (   //displaying each item
+              {cartItems?.map((item) => (
                 <>
                   <hr />
                   <div className="cart-item" data-key="product1">
@@ -69,7 +74,7 @@ const Cart = () => {
                         />
                       </div>
                       <div className="col-5 col-lg-3">
-                        <Link to={`/product/${item?.product}`}>
+                        <Link to={`/products/${item?.product}`}>
                           {" "}
                           {item?.name}{" "}
                         </Link>
@@ -139,7 +144,11 @@ const Cart = () => {
                   </span>
                 </p>
                 <hr />
-                <button id="checkout_btn" className="btn btn-primary w-100">
+                <button
+                  id="checkout_btn"
+                  className="btn btn-primary w-100"
+                  onClick={checkoutHandler}
+                >
                   Check out
                 </button>
               </div>

@@ -324,7 +324,15 @@ HANDLING USER CART
 cart componenet is added for showing up the cart page and summary with add,decrease,delete button.
 Meta Data added in every page ofr title.
 
- 
+ -------------------------------------Section 18-----------------------------
+
+ Handling Checkout 
+
+ npm install countries-list
+
+ Added up checkout things - checkoutSteps.jsx - UI, ConfirmOrder , PaymentMethod Page, Shipping Page 
+ with saving up the address in state using the orderSlice. 
+ Currently the after payment method is directed to home page, will fix in next but can be checked with the postman call. 
 
   DONE...........................
 
