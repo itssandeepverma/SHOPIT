@@ -334,6 +334,27 @@ Meta Data added in every page ofr title.
  with saving up the address in state using the orderSlice. 
  Currently the after payment method is directed to home page, will fix in next but can be checked with the postman call. 
 
+
+-------------------------------Section 19-----------------------------------------------
+
+Stripe Checkout 
+
+Backend added for stripe checkout, route , app.js and then controllables/payment.js
+Then move to frontend
+
+Add the stripe Api in config file
+Add the frontend component. Generate the shipping, tax rate from the stripe and put it into the frontend the provided key
+
+Strip webhook - When building Stripe integrations, you might want your applications to receive events as they occur in your Stripe accounts, so that your backend systems can execute actions accordingly.
+
+To enable webhook events, you need to register webhook endpoints. After you register them, Stripe can push real-time event data to your application’s webhook endpoint when events happen in your Stripe account. Stripe uses HTTPS to send webhook events to your app as a JSON payload that includes an Event object
+
+For windows, download the git file and execeute it.
+Then in commond promot hit stripe login and validate it.
+
+Added the webhook routes in backend and checkout session in orderApi
+
+
   DONE...........................
 
 
