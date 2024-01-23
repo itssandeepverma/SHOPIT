@@ -36,7 +36,7 @@ const Login = () => {
 
   return (
      <>
-      <MetaData title={"Your Cart"} />
+      <MetaData title={"Login"} />
     <div className="row wrapper">
       <div className="col-10 col-lg-5">
         <form className="shadow rounded bg-body" onSubmit={submitHandler}>

@@ -20,7 +20,7 @@ const Shipping = () => {
 
   const { shippingInfo } = useSelector((state) => state.cart);
 
-  useEffect(() => {                             // if shipping info exist in the state, local storage 
+  useEffect(() => {                             // if shipping info exist in the state, local storage
     if (shippingInfo) {
       setAddress(shippingInfo?.address);
       setCity(shippingInfo?.city);

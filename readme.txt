@@ -355,6 +355,18 @@ Then in commond promot hit stripe login and validate it.
 Added the webhook routes in backend and checkout session in orderApi
 
 
+---------------------------------------Section 20------------------------
+
+Handling Order Details, my order after the payment
+Making the cart value = 0 after the order.
+
+Added componenet/order/myorders to show all of the orders with two action buttion, view, invoice 
+order Details component shows the specific order using the order id.
+
+Three component added - order, invoice, review they all are fetching from the user table with the respective user id.
+Backend Controllers and route also added for can_review
+
+
   DONE...........................
 
 
