@@ -1,7 +1,7 @@
-/node_modules
+node_modules/
+.env.production
 /frontend/node_modules/
-
 /frontend/.env.local
 /frontend/.env.development.local
 /frontend/.env.test.local
-/frontend/.env.production.local 
+/frontend/.env.production.local
