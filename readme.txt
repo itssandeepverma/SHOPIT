@@ -367,7 +367,18 @@ Three component added - order, invoice, review they all are fetching from the us
 Backend Controllers and route also added for can_review
 
 
-  DONE...........................
+
+-----------------------------------section 21------------------------------------------
+
+Added two seperate route file - route/adminRoute , userroute and simplified the app.js 
+Added admin, charts, layout for admin componenets to handle out the admin dashbaord, get sales data, add new product, upload images. 
+Added two new routes for orders in backend. 
+
+
+-------------------------Section 22---------------------------------
+
+Added  list all user,review,products for admin
+--------------------------DONE...........................
 
 
 

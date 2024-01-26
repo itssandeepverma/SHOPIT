@@ -9,6 +9,7 @@ import { setCartItem } from "../../redux/features/cartSlice";
 import MetaData from "../layout/MetaData";
 import NewReview from "../reviews/NewReview";
 import ListReviews from "../reviews/ListReviews";
+import NotFound from "../layout/NotFound";
 
 const ProductDetails = () => {
   const params = useParams();
@@ -71,6 +72,11 @@ const ProductDetails = () => {
 
   if (isLoading) return <Loader />;
 
+  if (error && error?.status == 404) {
+    return <NotFound />;
+  }
+
+  
   return (
     <>
       <MetaData title={product?.name} />
@@ -146,7 +152,7 @@ const ProductDetails = () => {
             type="button"
             id="cart_btn"
             className="btn btn-primary d-inline ms-4"
-            disabled={product.stock <= 0}
+            disabled={product?.stock <= 0}
             onClick={setItemToCart}
           >
             Add to Cart
@@ -173,10 +179,7 @@ const ProductDetails = () => {
             Sold by: <strong>{product?.seller}</strong>
           </p>
 
-          {/* {alert("in review")} */}
-
           {isAuthenticated ? (
-
             <NewReview productId={product?._id} />
           ) : (
             <div className="alert alert-danger my-5" type="alert">

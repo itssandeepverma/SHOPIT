@@ -6,9 +6,9 @@
   "main": "app.js",
   "scripts": {
     "start": "node backend/app.js",
-    "dev": "set NODE_ENV=DEVELOPMENT && nodemon backend/app.js",
-    "prod": "set NODE_ENV=PRODUCTION && nodemon backend/app.js",
-    "seeder": "node backend/seeder/seeder.js"
+    "seeder": "node backend/seeder/seeder.js",
+     "dev": "set NODE_ENV= DEVELOPMENT && nodemon backend/app.js",
+    "prod": "set NODE_ENV= PRODUCTION && nodemon backend/app.js"
   },
   "author": "Sandeep Kumar",
   "license": "ISC",
