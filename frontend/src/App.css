@@ -8,7 +8,7 @@ body {
   overflow-x: hidden;
 }
 
-/* Scroll Bar */
+/* Scroll Bar */ 
 
 ::-webkit-scrollbar-track {
   background-color: #f5f5f5;
@@ -19,15 +19,15 @@ body {
   background-color: #f5f5f5;
 }
 
-::-webkit-scrollbar-thumb {
-  background-color: rgba(66, 66, 66, 0.2);
+::-webkit-scrollbar-thumb { 
+  background-color: rgba(44, 35, 35, 0.2);
   border: 0px;
   background-clip: padding-box;
   border-radius: 5px;
 }
 
 nav {
-  background-color: #232f3e;
+  background-color: rgba(44, 35, 35, 0.2);
   padding: 1rem 1rem;
 }
 
@@ -42,7 +42,7 @@ nav {
 }
 
 #search_btn {
-  background-color: #febd69;
+  background-color: #8062b8;
 }
 
 .input-group {
@@ -58,7 +58,7 @@ nav {
 #login_btn,
 #view_btn,
 #new_review_btn {
-  background-color: #fa9c23;
+  background-color: #8062b8;
   padding: 0.4rem 1.8rem;
   color: white;
 }
@@ -69,7 +69,7 @@ nav {
 }
 
 #cart_count {
-  background-color: #febd69;
+  background-color: #8062b8;
   padding: 0.2rem 0.5rem;
   border-radius: 0.2rem;
   color: black;
@@ -92,7 +92,7 @@ nav {
 }
 
 .card-title a:hover {
-  color: #fa9c23;
+  color: #8062b8;
   text-decoration: none;
 }
 
@@ -111,7 +111,7 @@ nav {
 
 .ratings {
   font-size: 1.2rem;
-  color: #fdcc0d;
+  color: #8062b8;
 }
 
 #no_of_reviews {
@@ -147,7 +147,7 @@ footer {
 #cart_btn,
 #review_btn {
   border-radius: 2rem;
-  background-color: #fa9c23;
+  background-color: #8062b8;
   border: none;
   padding: 0.5rem 2rem;
 }
@@ -164,11 +164,11 @@ footer {
 }
 
 .redColor {
-  color: red;
+  color: rgb(222, 109, 109);
 }
 
 .greenColor {
-  color: green;
+  color: rgb(108, 211, 108);
 }
 
 #product_image {
@@ -192,8 +192,8 @@ footer {
   height: 64px;
   margin: 8px;
   border-radius: 50%;
-  border: 6px solid #fa9c23;
-  border-color: #fa9c23 transparent;
+  border: 6px solid #8062b8;
+  border-color: #8062b8 transparent;
   animation: lds-dual-ring 1.2s linear infinite;
 }
 @keyframes lds-dual-ring {
@@ -217,7 +217,7 @@ footer {
 }
 
 #delete_cart_item {
-  color: red;
+  color: rgb(222, 115, 115);
   background: white;
   padding: 0.3rem 0.5rem;
   font-size: 1.1rem;
@@ -225,22 +225,22 @@ footer {
 }
 
 #card_item_price {
-  color: #febd69;
+  color: #8062b8;
   font-weight: bold;
   font-size: 1.4rem;
 }
 
 #checkout_btn,
 .review-btn {
-  background-color: #fa9c23;
-  border-color: #fa9c23;
+  background-color: #8062b8;
+  border-color: #8062b8;
   margin-top: 2rem;
   border-radius: 5rem;
 }
 
 #view_order_details {
-  background-color: #fa9c23;
-  border-color: #fa9c23;
+  background-color: #8062b8;
+  border-color: #8062b8;
 }
 
 #order_summary {
@@ -293,14 +293,14 @@ footer {
 
 .wrapper form .btn,
 .fetch-btn {
-  background-color: #fa9c23;
-  border-color: #fa9c23;
+  background-color: #8062b8;
+  border-color: #8062b8;
   color: white;
   margin-top: 1rem;
 }
 
 .fetch-btn:hover {
-  background-color: #fa9c23;
+  background-color: #8062b8;
   color: white;
 }
 
@@ -378,7 +378,7 @@ footer {
 }
 
 .active-step {
-  background: #fa9c23;
+  background: #8062b8;
   color: #fff;
 }
 
@@ -386,7 +386,7 @@ footer {
   float: left;
   width: 0;
   border-top: 20px solid transparent;
-  border-left: 15px solid #fa9c23;
+  border-left: 15px solid #8062b8;
   border-bottom: 20px solid transparent;
   margin-left: -1px;
 }
@@ -394,9 +394,9 @@ footer {
 .triangle2-active {
   width: 0;
   float: left;
-  border-top: 20px solid #fa9c23;
+  border-top: 20px solid #8062b8;
   border-left: 15px solid #fff;
-  border-bottom: 20px solid #fa9c23;
+  border-bottom: 20px solid #8062b8;
   margin-right: -1px;
 }
 
@@ -436,8 +436,8 @@ footer {
 }
 
 #edit_profile {
-  background-color: #fa9c23;
-  border-color: #fa9c23;
+  background-color: #8062b8;
+  border-color: #8062b8;
 }
 
 /* Confirm Order */
@@ -449,8 +449,8 @@ footer {
 
 .update-btn,
 #create_btn {
-  background-color: #fa9c23;
-  border-color: #fa9c23;
+  background-color: #8062b8;
+  border-color: #8062b8;
   color: white;
 }
 
@@ -460,16 +460,16 @@ footer {
 
 /* Pagination */
 .page-item.active .page-link {
-  background-color: #fa9c23;
-  border-color: #fa9c23;
+  background-color: #8062b8;
+  border-color: #8062b8;
 }
 
 .page-link {
-  color: #fa9c23;
+  color: #8062b8;
 }
 
 .page-link:hover {
-  color: #fa9c23;
+  color: #8062b8;
 }
 
 /* Products List Admin */
@@ -516,11 +516,11 @@ footer {
 }
 
 .orange {
-  color: #fa9c23;
+  color: #8062b8;
 }
 
 .yellow {
-  color: #fdcc0d;
+  color: #8062b8;
 }
 
 .review_user {
@@ -538,8 +538,8 @@ footer {
 }
 
 #filter_form button {
-  background-color: #fa9c23;
-  border-color: #fa9c23;
+  background-color: #8062b8;
+  border-color: #8062b8;
 }
 
 .filter {
@@ -561,5 +561,5 @@ footer {
   background-color: #f3f4f6;
   border-color: #f3f4f6;
   border-radius: 0.3rem;
-  color: #fa9c23;
+  color: #8062b8;
 }

@@ -20,6 +20,7 @@ process.on("uncaughtException", (err) => {
 console.log(process.env.NODE_ENV + "DS")
 
 if (process.env.NODE_ENV.trim() !== "PRODUCTION") {
+  console.log("ni dev")
   dotenv.config({ path: "backend/config/config.env" });
 }
 

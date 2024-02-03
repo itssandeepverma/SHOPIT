@@ -9,10 +9,12 @@ export const stripeCheckoutSession = catchAsyncErrors(
   async (req, res, next) => {
     const body = req?.body;
 
+    // console.log(body)
+
     const line_items = body?.orderItems?.map((item) => {
       return {
         price_data: {
-          currency: "usd",
+          currency: "inr",
           product_data: {
             name: item?.name,
             images: [item?.image],
@@ -20,7 +22,7 @@ export const stripeCheckoutSession = catchAsyncErrors(
           },
           unit_amount: item?.price * 100,
         },
-        tax_rates: ["txr_1LlBSDA7jBHqn8SB8z4waAin"],
+        tax_rates: ["txr_1OcuHMSCAIhYHN9nmoumw3kP"],
         quantity: item?.quantity,
       };
     });
@@ -28,9 +30,9 @@ export const stripeCheckoutSession = catchAsyncErrors(
     const shippingInfo = body?.shippingInfo;
 
     const shipping_rate =
-      body?.itemsPrice >= 200
-        ? "shr_1LlBW5A7jBHqn8SBG2fsAWwT"
-        : "shr_1NQYwEA7jBHqn8SBs5alau8k";
+      body?.itemsPrice < 500
+        ? "shr_1OcuPcSCAIhYHN9nVPML7O59"
+        : "shr_1ObLbvSCAIhYHN9nwejMAkBj";
 
     const session = await stripe.checkout.sessions.create({
       payment_method_types: ["card"],
@@ -40,11 +42,15 @@ export const stripeCheckoutSession = catchAsyncErrors(
       client_reference_id: req?.user?._id?.toString(),
       mode: "payment",
       metadata: { ...shippingInfo, itemsPrice: body?.itemsPrice },
+      
+      
       shipping_options: [
         {
           shipping_rate,
         },
       ],
+
+
       line_items,
     });
 
@@ -128,11 +134,12 @@ export const stripeWebhook = catchAsyncErrors(async (req, res, next) => {
         user,
       };
 
-      await Order.create(orderData);
+      console.log("create new item")
+      await Order.create(orderData); 
 
       res.status(200).json({ success: true });
     }
   } catch (error) {
     console.log("Error => ", error);
-  }
+  } 
 });

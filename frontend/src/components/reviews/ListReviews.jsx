@@ -26,7 +26,7 @@ const ListReviews = ({ reviews }) => {
               <div class="col-11">
                 <StarRatings
                   rating={review?.rating}
-                  starRatedColor="#ffb829"
+                  starRatedColor="#8062b8"
                   numberOfStars={5}
                   name="rating"
                   starDimension="24px"

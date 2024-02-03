@@ -73,7 +73,7 @@ const NewReview = ({ productId }) => {
                 <div class="modal-body">
                   <StarRatings
                     rating={rating}
-                    starRatedColor="#ffb829"
+                    starRatedColor="#8062b8"
                     numberOfStars={5}
                     name="rating"
                     changeRating={(e) => setRating(e)}

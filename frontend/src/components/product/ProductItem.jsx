@@ -23,7 +23,7 @@ const ProductItem = ({ product, columnSize }) => {
           <div className="ratings mt-auto d-flex">
             <StarRatings
               rating={product?.ratings}
-              starRatedColor="#ffb829"
+              starRatedColor="#8062b8"
               numberOfStars={5}
               name="rating"
               starDimension="22px"
@@ -34,7 +34,7 @@ const ProductItem = ({ product, columnSize }) => {
               ({product?.numOfReviews})
             </span>
           </div>
-          <p className="card-text mt-2">${product?.price}</p>
+          <p className="card-text mt-2">₹{product?.price}</p>
           <Link
             to={`/product/${product?._id}`}
             id="view_btn"

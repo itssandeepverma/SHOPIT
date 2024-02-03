@@ -104,9 +104,9 @@ const Invoice = () => {
                   <tr>
                     <td className="service">{item?.product}</td>
                     <td className="desc">{item?.name}</td>
-                    <td className="unit">${item?.price}</td>
+                    <td className="unit">₹{item?.price}</td>
                     <td className="qty">{item?.quantity}</td>
-                    <td className="total">${item?.price * item?.quantity}</td>
+                    <td className="total">₹{item?.price * item?.quantity}</td>
                   </tr>
                 ))}
 
@@ -114,28 +114,28 @@ const Invoice = () => {
                   <td colspan="4">
                     <b>SUBTOTAL</b>
                   </td>
-                  <td className="total">${order?.itemsPrice}</td>
+                  <td className="total">₹{order?.itemsPrice}</td>
                 </tr>
 
                 <tr>
                   <td colspan="4">
                     <b>TAX 15%</b>
                   </td>
-                  <td className="total">${order?.taxAmount}</td>
+                  <td className="total">₹{order?.taxAmount}</td>
                 </tr>
 
                 <tr>
                   <td colspan="4">
                     <b>SHIPPING</b>
                   </td>
-                  <td className="total">${order?.shippingAmount}</td>
+                  <td className="total">₹{order?.shippingAmount}</td>
                 </tr>
 
                 <tr>
                   <td colspan="4" className="grand total">
                     <b>GRAND TOTAL</b>
                   </td>
-                  <td className="grand total">${order?.totalAmount}</td>
+                  <td className="grand total">₹{order?.totalAmount}</td>
                 </tr>
               </tbody>
             </table>

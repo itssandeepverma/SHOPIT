@@ -6,9 +6,10 @@ import { useNavigate } from "react-router-dom";
 import MetaData from "../layout/MetaData";
 
 const Login = () => {
+
+  console.log("login")
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
   const navigate = useNavigate();
 
   const [login, { isLoading, error, data }] = useLoginMutation();
@@ -16,7 +17,10 @@ const Login = () => {
 
   useEffect(() => {
     if (isAuthenticated) {
+
+      // console.log("here")
       navigate("/");
+      
     }
     if (error) {
       toast.error(error?.data?.message);
@@ -33,6 +37,8 @@ const Login = () => {
 
     login(loginData);
   };
+
+  console.log("eee")
 
   return (
      <>
